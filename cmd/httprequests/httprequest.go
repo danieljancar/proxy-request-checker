@@ -35,6 +35,9 @@ func (objects ProxyObjects) Init(report *reportgenerator.Report) {
 	if strings.ToLower(string(result)) == "y" {
 		filePath := "report.json"
 		fmt.Print("Enter file path to save the report (default: report.json): ")
+
+		reader.ReadString('\n')
+
 		input, err := reader.ReadString('\n')
 		if err == nil && strings.TrimSpace(input) != "" {
 			filePath = strings.TrimSpace(input)

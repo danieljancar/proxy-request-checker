@@ -37,7 +37,7 @@ func (r *Report) AddRequest(url string, expectedResponse, actualResponse int) {
 func (r *Report) SaveToFile(filePath string) error {
 	fileData, err := json.MarshalIndent(r, "", "  ")
 	if err != nil {
-		log.Printf("Error marshaling report to JSON: %s", err)
+		log.Printf("Error transfering report to JSON: %s", err)
 		return err
 	}
 
