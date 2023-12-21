@@ -6,8 +6,8 @@ This is a simple proxy checker written in Go. It checks the links in the `links.
 
 ### Prerequisites
 
-* [Go](https://golang.org/dl/)
-* [Git](https://git-scm.com/downloads)
+- [Go](https://golang.org/dl/)
+- [Git](https://git-scm.com/downloads)
 
 ### Installing
 
