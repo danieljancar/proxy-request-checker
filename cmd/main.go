@@ -13,7 +13,7 @@ func main() {
 
 	err := jsonparser.ParseFromJsonFile("config/links.json", &proxies)
 	if err != nil {
-		log.Fatalf("Error parsing json file: %s", err.Error())
+		log.Fatalf("Error processing json file or default values: %s", err.Error())
 		return
 	}
 

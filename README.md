@@ -39,53 +39,32 @@ The `config/links.json` file contains the proxies to be checked. The format is a
 
 ## Usage
 
+### Source Code
+
 ```bash
 go run cmd/main.go
 ```
+
+### Binary
+
+```bash
+go build -o proxy-checker cmd/main.go
+./proxy-checker
+```
+
+> Recommended: Run the binary on the project root directory to avoid any issues.
 
 ## Output
 
 ```bash
 $ go run main.go
-Checking 3 proxies...
-Proxy 1:
-    IP: xxx.xxx.xxx.xxx
-    Port: xxxx
-    Country: xxx
-    Anonymity: xxx
-    HTTPS: xxx
-    Speed: xxx
-    Status: xxx
-Proxy 2:
-    IP: xxx.xxx.xxx.xxx
-    Port: xxxx
-    Country: xxx
-    Anonymity: xxx
-    HTTPS: xxx
-    Speed: xxx
-    Status: xxx
-Proxy 3:
-    IP: xxx.xxx.xxx.xxx
-    Port: xxxx
-    Country: xxx
-    Anonymity: xxx
-    HTTPS: xxx
-    Speed: xxx
-    Status: xxx
-    
-Finished checking 3 proxies.
---------
-Results:
-    200: 2
-    403: 1
-    Failed: 0
-    Total: 3
-
-Do you want to save the results? (y/n): y
-
-Enter the name of the file: results
-
-Saved results to results.json 
+2023/12/21 18:30:12 Requesting https://www.google.com
+2023/12/21 18:30:13 Request to https://www.google.com successful with expected status code 200
+2023/12/21 18:30:13 Requesting https://www.slack.com
+2023/12/21 18:30:13 Request to https://www.slack.com successful with expected status code 200
+Do you wish to export the results? (y/n): y
+Enter file path to save the report (default: report.json): test-output
+2023/12/21 18:30:25 Report successfully saved to test-output
 ```
 
 # Contributing
