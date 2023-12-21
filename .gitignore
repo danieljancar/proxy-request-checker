@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+
+# Config files
+/config/links.json
+.env
