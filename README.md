@@ -1,6 +1,6 @@
 # Proxy Checker in Go
 
-This is a simple proxy checker written in Go. It checks the proxies in the `proxies.json` file and returns a report.
+This is a simple proxy checker written in Go. It checks the links in the `links.json` file and returns a report.
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ cd go-proxy-checker
 
 ### Configuration
 
-The `proxies.json` file contains the proxies to be checked. The format is as follows:
+The `config/links.json` file contains the proxies to be checked. The format is as follows, make sure to create a `links.json` file in the `config` folder if it does not exist.
 
 ```json
 [
@@ -32,7 +32,7 @@ The `proxies.json` file contains the proxies to be checked. The format is as fol
   },
   {
     "url": "https://xxx.xxx.xxx.xxx:xxxx",
-    "expectedStatus": 200
+    "expectedStatus": 403
   }
 ]
 ```
@@ -40,7 +40,7 @@ The `proxies.json` file contains the proxies to be checked. The format is as fol
 ## Usage
 
 ```bash
-go run main.go
+go run cmd/main.go
 ```
 
 ## Output
@@ -72,6 +72,20 @@ Proxy 3:
     HTTPS: xxx
     Speed: xxx
     Status: xxx
+    
+Finished checking 3 proxies.
+--------
+Results:
+    200: 2
+    403: 1
+    Failed: 0
+    Total: 3
+
+Do you want to save the results? (y/n): y
+
+Enter the name of the file: results
+
+Saved results to results.json 
 ```
 
 # Contributing
