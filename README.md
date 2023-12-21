@@ -67,6 +67,10 @@ Enter file path to save the report (default: report.json): test-output
 2023/12/21 18:30:25 Report successfully saved to test-output
 ```
 
+# Known Issues
+
+- [ ] If running the binary, the report is not saved to the specified file path, also the links.json file is not found.
+
 # Contributing
 
 I welcome contributions from everyone. Before you get started, please take a moment to review the [guidelines](.github/CONTRIBUTING.md).
