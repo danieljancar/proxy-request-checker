@@ -18,7 +18,8 @@ cd go-proxy-checker
 
 ### Configuration
 
-The `config/links.json` file contains the proxies to be checked. The format is as follows, make sure to create a `links.json` file in the `config` folder if it does not exist.
+The `config/links.json` file contains the proxies to be checked. The format is as follows, make sure to create
+a `links.json` file in the `config` folder if it does not exist.
 
 ```json
 [
@@ -63,9 +64,11 @@ $ go run main.go
 2023/12/21 18:30:13 Requesting https://www.slack.com
 2023/12/21 18:30:13 Request to https://www.slack.com successful with expected status code 200
 Do you wish to export the results? (y/n): y
-Enter file path to save the report (default: report.json): test-output
-2023/12/21 18:30:25 Report successfully saved to test-output
+Enter file path to save the report (default: reports/date.report.json): 
+2024/01/08 08:27:05 Report successfully saved to reports/2024-01-08 08:27:02.report.json
 ```
+
+The report is saved to the `reports` folder by default. The file name is the current date and time.
 
 # Known Issues
 
@@ -73,7 +76,8 @@ Enter file path to save the report (default: report.json): test-output
 
 # Contributing
 
-I welcome contributions from everyone. Before you get started, please take a moment to review the [guidelines](.github/CONTRIBUTING.md).
+I welcome contributions from everyone. Before you get started, please take a moment to review
+the [guidelines](.github/CONTRIBUTING.md).
 
 ## Branches
 
@@ -84,11 +88,16 @@ This project uses the following branches:
 
 ## Commit Messages
 
-When you commit, make sure to follow the [Contributing Guide](.github/CONTRIBUTING.md) for commit messages. This will help keep the commit messages clean and consistent across the project. If you don't follow the guide, your pull request will be rejected.
+When you commit, make sure to follow the [Contributing Guide](.github/CONTRIBUTING.md) for commit messages. This will
+help keep the commit messages clean and consistent across the project. If you don't follow the guide, your pull request
+will be rejected.
 
 # License
 
-This project is licensed under the [MIT](LICENSE) license. By contributing to this project, you agree that your contributions will be released under the same license. Also, you agree to the [Contributor Covenant Code of Conduct](.github/CODE_OF_CONDUCT.md) and [Developer Certificate of Origin](.github/DCO.md).
+This project is licensed under the [MIT](LICENSE) license. By contributing to this project, you agree that your
+contributions will be released under the same license. Also, you agree to
+the [Contributor Covenant Code of Conduct](.github/CODE_OF_CONDUCT.md)
+and [Developer Certificate of Origin](.github/DCO.md).
 
 ## Disclaimer
 

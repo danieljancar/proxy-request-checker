@@ -38,8 +38,8 @@ func (objects ProxyObjects) Init(report *reportgenerator.Report) {
 	}
 
 	if strings.ToLower(string(result)) == "y" {
-		filePath := "report.json"
-		fmt.Print("Enter file path to save the report (default: report.json): ")
+		filePath := fmt.Sprintf("reports/%s.report.json", report.Date)
+		fmt.Print("Enter file path to save the report (default: reports/date.report.json): ")
 
 		reader.ReadString('\n')
 
