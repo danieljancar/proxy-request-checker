@@ -1,10 +1,14 @@
 {
   "Name": "Report",
-  "Date": "2024-01-05 07:47:14",
+  "Date": "2024-01-08 08:23:30",
+  "Status": "Fail",
+  "Total": 4,
+  "Success": 2,
+  "Fail": 2,
   "Requests": [
     {
       "URL": "https://google.com",
-      "ExpectedResponse": 200,
+      "ExpectedResponse": 403,
       "ActualResponse": 200
     },
     {
@@ -16,31 +20,6 @@
       "URL": "https://css.ch",
       "ExpectedResponse": 200,
       "ActualResponse": 200
-    },
-    {
-      "URL": "https://slack.com",
-      "ExpectedResponse": 403,
-      "ActualResponse": 200
-    },
-    {
-      "URL": "https://slack.com",
-      "ExpectedResponse": 403,
-      "ActualResponse": 200
-    },
-    {
-      "URL": "https://slack.com",
-      "ExpectedResponse": 403,
-      "ActualResponse": 200
-    },
-    {
-      "URL": "https://slack.com",
-      "ExpectedResponse": 403,
-      "ActualResponse": 200
-    },
-    {
-      "URL": "https://slack.com",
-      "ExpectedResponse": 403,
-      "ActualResponse": 429
     },
     {
       "URL": "https://slack.com",

@@ -15,6 +15,11 @@ type ProxyObject struct {
 	ExpectedResponse int    `json:"expectedResponse"`
 }
 
+type RequestAnalysis struct {
+	Total   int
+	Success int
+	Fail    int
+}
 type ProxyObjects []ProxyObject
 
 func (objects ProxyObjects) Init(report *reportgenerator.Report) {
