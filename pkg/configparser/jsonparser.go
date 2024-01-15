@@ -1,4 +1,4 @@
-package jsonparser
+package configparser
 
 import (
 	"encoding/json"
@@ -29,6 +29,5 @@ func ParseFromJsonFile(filePath string, target *httprequests.ProxyObjects) error
 func defaultProxyObjects() httprequests.ProxyObjects {
 	return httprequests.ProxyObjects{
 		{URL: "https://www.google.com", ExpectedResponse: 200},
-		{URL: "https://www.slack.com", ExpectedResponse: 200},
 	}
 }

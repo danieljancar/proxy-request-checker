@@ -1,6 +1,7 @@
 package httprequests
 
 import (
+	"github.com/danieljancar/go-proxy-request-checker/pkg/proxyresponse"
 	"github.com/danieljancar/go-proxy-request-checker/pkg/reportgenerator"
 	"io"
 	"log"
@@ -22,6 +23,7 @@ func ProcessProxies(proxies *ProxyObjects, report *reportgenerator.Report) {
 			log.Printf("Error sending request: %s\n", err)
 			continue
 		}
+		proxyresponse.IsProxyHandlingValid(statusCode, proxy.URL)
 		report.AddRequest(proxy.URL, proxy.ExpectedResponse, statusCode)
 	}
 }
