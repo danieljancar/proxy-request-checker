@@ -21,9 +21,12 @@
 go.work
 
 # Config files
-/config/links.json
-.env
+/config/links/links.json
+/config/proxy/proxy.json
 reports/*_report.json
+## Environment
+.env
+
 
 # Build output
 dist/

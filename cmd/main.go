@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/danieljancar/go-proxy-request-checker/pkg/configparser"
 	"github.com/danieljancar/go-proxy-request-checker/pkg/httprequests"
-	"github.com/danieljancar/go-proxy-request-checker/pkg/jsonparser"
 	"github.com/danieljancar/go-proxy-request-checker/pkg/reportgenerator"
 	"log"
 	"os"
@@ -13,7 +13,7 @@ func main() {
 	var proxies httprequests.ProxyObjects
 	report := reportgenerator.NewReport()
 
-	err := jsonparser.ParseFromJsonFile("config/links.json", &proxies)
+	err := configparser.ParseFromJsonFile("config/links/links.json", &proxies)
 	if err != nil {
 		log.Fatalf("Error processing json file: %s", err)
 		return
