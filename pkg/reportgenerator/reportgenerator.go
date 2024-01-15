@@ -2,31 +2,30 @@ package reportgenerator
 
 import (
 	"encoding/json"
-	"io/ioutil"
-	"log"
+	"os"
 	"time"
 )
 
 type Report struct {
-	Name     string
-	Date     string
-	Status   string
-	Total    int
-	Success  int
-	Fail     int
-	Requests []RequestReport
+	Name     string          `json:"name"`
+	Date     string          `json:"date"`
+	Status   string          `json:"status"`
+	Total    int             `json:"total"`
+	Success  int             `json:"success"`
+	Fail     int             `json:"fail"`
+	Requests []RequestReport `json:"requests"`
 }
 
 type RequestReport struct {
-	URL              string
-	ExpectedResponse int
-	ActualResponse   int
+	URL              string `json:"url"`
+	ExpectedResponse int    `json:"expectedResponse"`
+	ActualResponse   int    `json:"actualResponse"`
 }
 
 func NewReport() *Report {
 	return &Report{
 		Name:     "Report",
-		Date:     time.Now().Format("2006-01-02 15:04:05"),
+		Date:     time.Now().Format(time.RFC3339),
 		Status:   "Success",
 		Total:    0,
 		Success:  0,
@@ -48,28 +47,18 @@ func (r *Report) Analyze() {
 }
 
 func (r *Report) AddRequest(url string, expectedResponse, actualResponse int) {
-	requestReport := RequestReport{
+	r.Requests = append(r.Requests, RequestReport{
 		URL:              url,
 		ExpectedResponse: expectedResponse,
 		ActualResponse:   actualResponse,
-	}
-	r.Requests = append(r.Requests, requestReport)
+	})
 }
 
 func (r *Report) SaveToFile(filePath string) error {
 	r.Analyze()
-	fileData, err := json.MarshalIndent(r, "", "  ")
+	data, err := json.MarshalIndent(r, "", " ")
 	if err != nil {
-		log.Printf("Error transfering report to JSON: %s", err)
 		return err
 	}
-
-	err = ioutil.WriteFile(filePath, fileData, 0644)
-	if err != nil {
-		log.Printf("Error writing report to file: %s", err)
-		return err
-	}
-
-	log.Printf("Report successfully saved to %s", filePath)
-	return nil
+	return os.WriteFile(filePath, data, 0644)
 }

@@ -58,14 +58,9 @@ go build -o proxy-checker cmd/main.go
 ## Output
 
 ```bash
-$ go run main.go
-2023/12/21 18:30:12 Requesting https://www.google.com
-2023/12/21 18:30:13 Request to https://www.google.com successful with expected status code 200
-2023/12/21 18:30:13 Requesting https://www.slack.com
-2023/12/21 18:30:13 Request to https://www.slack.com successful with expected status code 200
-Do you wish to export the results? (y/n): y
-Enter file path to save the report (default: reports/date.report.json): 
-2024/01/08 08:27:05 Report successfully saved to reports/2024-01-08 08:27:02.report.json
+$ go run cmd/main.go
+2024/01/15 09:52:22 Requesting https://google.com
+2024/01/15 09:52:22 Requesting https://dev.to
 ```
 
 The report is saved to the `reports` folder by default. The file name is the current date and time.
