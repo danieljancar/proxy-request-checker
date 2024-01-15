@@ -5,24 +5,8 @@ before:
     - go mod tidy
     - go generate ./...
 
-builds:
-  - id: "build_default"
-    env:
-      - CGO_ENABLED=0
-    goos:
-      - linux
-      - windows
-      - darwin
-  - id: "build_cmd"
-    main: "./cmd/"
-    goos:
-      - linux
-      - windows
-      - darwin
-
 archives:
   - format: tar.gz
-
     name_template: >-
       {{ .ProjectName }}_
       {{- title .Os }}_
