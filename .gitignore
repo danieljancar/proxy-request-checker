@@ -24,3 +24,5 @@ go.work
 /config/links.json
 .env
 reports/*_report.json
+
+dist/
