@@ -2,6 +2,7 @@ package reportgenerator
 
 import (
 	"encoding/json"
+	"log"
 	"os"
 	"time"
 )
@@ -55,6 +56,7 @@ func (r *Report) AddRequest(url string, expectedResponse, actualResponse int) {
 }
 
 func (r *Report) SaveToFile(filePath string) error {
+	log.Printf("Saving report to: %s", filePath)
 	r.Analyze()
 	data, err := json.MarshalIndent(r, "", " ")
 	if err != nil {

@@ -6,6 +6,7 @@ import (
 	"github.com/danieljancar/go-proxy-request-checker/pkg/jsonparser"
 	"github.com/danieljancar/go-proxy-request-checker/pkg/reportgenerator"
 	"log"
+	"os"
 )
 
 func main() {
@@ -19,10 +20,11 @@ func main() {
 	}
 
 	httprequests.ProcessProxies(&proxies, report)
-
-	filePath := fmt.Sprintf("reports/%s_report.json", report.Date)
-	if err := report.SaveToFile(filePath); err != nil {
-		log.Fatalf("Failed to save the report to file: %s", err)
-		return
+	if os.Getenv("CREATE_REPORT") == "1" {
+		filePath := fmt.Sprintf("reports/%s_report.json", report.Date)
+		if err := report.SaveToFile(filePath); err != nil {
+			log.Fatalf("Failed to save the report to file: %s", err)
+			return
+		}
 	}
 }
