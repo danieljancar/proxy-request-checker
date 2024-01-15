@@ -16,7 +16,7 @@ git clone https://github.com/danieljancar/go-proxy-request-checker.git
 cd go-proxy-checker
 ```
 
-### Configuration
+## Configuration
 
 The `config/links.json` file contains the proxies to be checked. The format is as follows, make sure to create
 a `links.json` file in the `config` folder if it does not exist.
@@ -38,6 +38,14 @@ a `links.json` file in the `config` folder if it does not exist.
 ]
 ```
 
+The `.env` file contains the configuration for the proxy checker. The format is as follows, make sure to create a `.env`
+file, based on the `.env.example` file, if it does not exist.
+
+```env
+# Application configurations
+CREATE_REPORT=0/1
+```
+
 ## Usage
 
 ### Source Code
@@ -50,10 +58,10 @@ go run cmd/main.go
 
 ```bash
 go build -o bin/proxy-checker cmd/main.go
-./proxy-checker
+.bin/proxy-checker
 ```
 
-> Recommended: Run the binary on the project root directory to avoid any issues.
+> Recommended: Run the binary on the project root directory to avoid any issues. 
 
 ## Output
 
@@ -68,7 +76,7 @@ The report is saved to the `reports` folder by default. The file name is the cur
 # Known Issues
 
 - [ ] If running the binary, the report is not saved to the specified file path, also the links.json file is not found,
-  if the binary isn't run from the project root directory.
+  if the binary isn't run from the project root directory. #3
 
 # Contributing
 
