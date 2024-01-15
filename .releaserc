@@ -1,5 +1,5 @@
 {
-  "branches": ["master"],
+  "branches": ["develop"],
   "plugins": {
     "commit-analyzer": {
       "name": "default@^1.0.0"
