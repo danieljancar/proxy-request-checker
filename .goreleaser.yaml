@@ -5,6 +5,9 @@ before:
     - go mod tidy
     - go generate ./...
 
+builds:
+  - skip: true
+
 archives:
   - format: tar.gz
     name_template: >-
