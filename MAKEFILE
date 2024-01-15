@@ -1,19 +1,14 @@
-# Go parameters
-GOCMD=go
-GOBUILD=$(GOCMD) build
-GOCLEAN=$(GOCMD) clean
-GOTEST=$(GOCMD) test
-BINARY_NAME=gprc
+start:
+	go run cmd/main.go
 
-# Targets
-all: test build
 build:
-	$(GOBUILD) -o $(BINARY_NAME) -v
+	go build -o bin/proxy-checker cmd/main.go
+
 test:
-	$(GOTEST) -v ./...
+	go test -v ./...
+
+format:
+	go fmt ./...
+
 clean:
-	$(GOCLEAN)
-	rm -f $(BINARY_NAME)
-run:
-	$(GOBUILD) -o $(BINARY_NAME) -v ./...
-	./$(BINARY_NAME)
+	rm -rf bin/

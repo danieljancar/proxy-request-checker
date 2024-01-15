@@ -49,7 +49,7 @@ go run cmd/main.go
 ### Binary
 
 ```bash
-go build -o proxy-checker cmd/main.go
+go build -o bin/proxy-checker cmd/main.go
 ./proxy-checker
 ```
 
@@ -67,7 +67,8 @@ The report is saved to the `reports` folder by default. The file name is the cur
 
 # Known Issues
 
-- [ ] If running the binary, the report is not saved to the specified file path, also the links.json file is not found.
+- [ ] If running the binary, the report is not saved to the specified file path, also the links.json file is not found,
+  if the binary isn't run from the project root directory.
 
 # Contributing
 

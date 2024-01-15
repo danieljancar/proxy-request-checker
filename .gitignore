@@ -25,4 +25,6 @@ go.work
 .env
 reports/*_report.json
 
+# Build output
 dist/
+
