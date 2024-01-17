@@ -7,7 +7,7 @@ This is a guide for contributing to this project. Please read this before making
 This project uses the following branches:
 
 - `master` - The main branch. This branch is used for production releases.
-- `develop` - The development branch. This branch is used for development and testing.
+- `develop` - The development branch. This branch is used for development and testing. All pull requests should be made against this branch.
 
 ## Commit Messages
 
