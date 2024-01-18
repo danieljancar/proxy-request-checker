@@ -13,7 +13,7 @@ func main() {
 	var proxies httprequests.ProxyObjects
 	report := reportgenerator.NewReport()
 
-	err := configparser.ParseFromJsonFile("config/links/links.json", &proxies)
+	err := configparser.ParseFromJsonFile("config/links/links-config.json", &proxies)
 	if err != nil {
 		log.Fatalf("Error processing json file: %s", err)
 		return

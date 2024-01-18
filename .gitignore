@@ -21,8 +21,8 @@
 go.work
 
 # Config files
-/config/links/links.json
-/config/proxy/proxy.json
+/config/links/links-config.json
+/config/proxy/proxy-config.json
 reports/*_report.json
 ## Environment
 .env
