@@ -37,7 +37,7 @@ func IsProxyHandlingValid(statusCode int, url string) {
 }
 
 func readRequestResponse(url string) {
-	data, err := ioutil.ReadFile("config/proxy/proxy.json")
+	data, err := ioutil.ReadFile("config/proxy/proxy-config.json")
 	if err != nil {
 		log.Printf("Error reading configuration file: %s", err)
 		return
