@@ -11,7 +11,7 @@ make <command>
 ## Commands
 
 | Command  | Description           |
-|----------|-----------------------|
+| -------- | --------------------- |
 | `start`  | Start the application |
 | `build`  | Build the application |
 | `test`   | Run the tests         |

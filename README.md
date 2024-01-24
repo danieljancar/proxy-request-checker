@@ -1,6 +1,6 @@
 # Proxy Checker in Go
 
-This is a simple proxy checker written in Go. It checks the links in the `links.json` file and returns a report.
+Check if your network or proxy are working as expected, by checking the status code of a request to a website.
 
 ## Getting Started
 
@@ -9,74 +9,60 @@ This is a simple proxy checker written in Go. It checks the links in the `links.
 - [Go](https://golang.org/dl/)
 - [Git](https://git-scm.com/downloads)
 
-### Installing
-
-```bash
-git clone https://github.com/danieljancar/go-proxy-request-checker.git
-cd go-proxy-checker
-```
-
 ## Configuration
 
-The `config/links.json` file contains the proxies to be checked. The format is as follows, make sure to create
-a `links.json` file in the `config` folder if it does not exist.
+The `config/links/links-config.json` file contains the proxies to be checked.
 
 ```json
 [
   {
     "url": "https://xxx.xxx.xxx.xxx:xxxx",
     "expectedStatus": 200
-  },
-  {
-    "url": "https://xxx.xxx.xxx.xxx:xxxx",
-    "expectedStatus": 200
-  },
-  {
-    "url": "https://xxx.xxx.xxx.xxx:xxxx",
-    "expectedStatus": 403
   }
 ]
 ```
 
+> **Note:** Make sure to create the `links-config.json` file, based on the `links-config.example.json` file, if it does
+> not exist.
+
+---
+
 The `.env` file contains the configuration for the proxy checker. The format is as follows, make sure to create a `.env`
 file, based on the `.env.example` file, if it does not exist.
 
-```env
-# Application configurations
-CREATE_REPORT=0/1
-```
+> **Note:** Find more information about the configuration in the [docs/configuration.md](docs/CONFIGURATION.md) file.
 
 ## Usage
 
-### Source Code
+### Go Run
+
+To run the proxy checker on the fly, run the following command:
 
 ```bash
+/projects/go-proxy-request-checker >
 go run cmd/main.go
 ```
 
 ### Binary
 
+To run the proxy checker as a binary, run the following commands:
+
 ```bash
+/projects/go-proxy-request-checker >
 go build -o bin/proxy-checker cmd/main.go
-.bin/proxy-checker
+/projects/go-proxy-request-checker >
+bin/proxy-checker
 ```
 
-> Recommended: Run the binary on the project root directory to avoid any issues. 
+> **Note:** Run the binary on the project root directory to avoid any issues with the config files, that might not be
+> found.
 
-## Output
-
-```bash
-$ go run cmd/main.go
-2024/01/15 09:52:22 Requesting https://google.com
-2024/01/15 09:52:22 Requesting https://dev.to
-```
-
-The report is saved to the `reports` folder by default. The file name is the current date and time.
+The report is saved to the `reports` folder by default.
 
 # Known Issues
 
 - [ ] If running the binary, the report is not saved to the specified file path, also the links.json file is not found,
-  if the binary isn't run from the project root directory. [Issue here](https://github.com/danieljancar/go-proxy-request-checker/issues/3)
+      if the binary isn't run from the project root directory. #3
 
 # Contributing
 
