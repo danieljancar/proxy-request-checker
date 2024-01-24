@@ -76,7 +76,7 @@ The report is saved to the `reports` folder by default. The file name is the cur
 # Known Issues
 
 - [ ] If running the binary, the report is not saved to the specified file path, also the links.json file is not found,
-  if the binary isn't run from the project root directory. #3
+  if the binary isn't run from the project root directory. [Issue here](https://github.com/danieljancar/go-proxy-request-checker/issues/3)
 
 # Contributing
 
