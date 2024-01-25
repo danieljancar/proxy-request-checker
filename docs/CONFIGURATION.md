@@ -9,7 +9,7 @@ We have a few environment variables that you can set to configure the proxy requ
 are saved in the `.env` file at the root of the project.
 
 | Variable                  | Description                                                 | Default |
-|---------------------------|-------------------------------------------------------------|---------|
+| ------------------------- | ----------------------------------------------------------- | ------- |
 | `CREATE_REPORT`           | Whether or not to create a report file.                     | `1`     |
 | `PROXY_HANDLING`          | Whether or not to handle proxies.                           | `0`     |
 | `PROXY_EXPECTED_RESPONSE` | The expected response from the proxy, to start handling it. | `403`   |
@@ -69,5 +69,3 @@ read out defined values from the returned HTML body of your proxy interceptor se
 ```
 
 > **Note:** The above example is a very simple HTML structure, but it is just to show you how the depth and tag work.
-
-
