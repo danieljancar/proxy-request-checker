@@ -3,7 +3,6 @@ package httprequests
 import (
 	"github.com/danieljancar/go-proxy-request-checker/pkg/proxyresponse"
 	"github.com/danieljancar/go-proxy-request-checker/pkg/reportgenerator"
-	"io"
 	"log"
 	"net/http"
 )
@@ -18,27 +17,26 @@ type ProxyObjects []ProxyObject
 func ProcessProxies(proxies *ProxyObjects, report *reportgenerator.Report) {
 	for _, proxy := range *proxies {
 		log.Printf("Requesting %s\n", proxy.URL)
-		statusCode, err := proxy.SendRequest()
+		statusCode, htmlValues, err := proxy.SendRequest()
 		if err != nil {
 			log.Printf("Error sending request: %s\n", err)
 			continue
 		}
 		proxyresponse.IsProxyHandlingValid(statusCode, proxy.URL)
-		report.AddRequest(proxy.URL, proxy.ExpectedResponse, statusCode)
+		report.AddRequest(proxy.URL, proxy.ExpectedResponse, statusCode, htmlValues)
 	}
 }
 
-func (p ProxyObject) SendRequest() (int, error) {
+func (p ProxyObject) SendRequest() (int, []string, error) {
 	response, err := http.Get(p.URL)
 	if err != nil {
-		return 0, err
+		return 0, nil, err
 	}
-	defer func(Body io.ReadCloser) {
-		err := Body.Close()
-		if err != nil {
-			log.Printf("Error closing response body: %s\n", err)
-		}
-	}(response.Body)
+	defer response.Body.Close()
 
-	return response.StatusCode, nil
+	depth, tag := proxyresponse.GetHTMLParseConfig()
+
+	htmlValues := proxyresponse.ParseHTML(response.Body, depth, tag)
+
+	return response.StatusCode, htmlValues, nil
 }

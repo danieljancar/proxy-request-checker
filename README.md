@@ -39,7 +39,7 @@ file, based on the `.env.example` file, if it does not exist.
 To run the proxy checker on the fly, run the following command:
 
 ```bash
-/projects/go-proxy-request-checker >
+/projects/proxy-request-checker >
 go run cmd/main.go
 ```
 
@@ -48,9 +48,9 @@ go run cmd/main.go
 To run the proxy checker as a binary, run the following commands:
 
 ```bash
-/projects/go-proxy-request-checker >
+/projects/proxy-request-checker >
 go build -o bin/proxy-checker cmd/main.go
-/projects/go-proxy-request-checker >
+/projects/proxy-request-checker >
 bin/proxy-checker
 ```
 
