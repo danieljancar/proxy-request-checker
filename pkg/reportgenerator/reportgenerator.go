@@ -18,9 +18,10 @@ type Report struct {
 }
 
 type RequestReport struct {
-	URL              string `json:"url"`
-	ExpectedResponse int    `json:"expectedResponse"`
-	ActualResponse   int    `json:"actualResponse"`
+	URL              string   `json:"url"`
+	ExpectedResponse int      `json:"expectedResponse"`
+	ActualResponse   int      `json:"actualResponse"`
+	HtmlValues       []string `json:"htmlValues"`
 }
 
 func NewReport() *Report {
@@ -47,11 +48,12 @@ func (r *Report) Analyze() {
 	}
 }
 
-func (r *Report) AddRequest(url string, expectedResponse, actualResponse int) {
+func (r *Report) AddRequest(url string, expectedResponse, actualResponse int, htmlValues []string) {
 	r.Requests = append(r.Requests, RequestReport{
 		URL:              url,
 		ExpectedResponse: expectedResponse,
 		ActualResponse:   actualResponse,
+		HtmlValues:       htmlValues,
 	})
 }
 

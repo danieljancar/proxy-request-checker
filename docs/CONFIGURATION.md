@@ -9,7 +9,7 @@ We have a few environment variables that you can set to configure the proxy requ
 are saved in the `.env` file at the root of the project.
 
 | Variable                  | Description                                                 | Default |
-| ------------------------- | ----------------------------------------------------------- | ------- |
+|---------------------------|-------------------------------------------------------------|---------|
 | `CREATE_REPORT`           | Whether or not to create a report file.                     | `1`     |
 | `PROXY_HANDLING`          | Whether or not to handle proxies.                           | `0`     |
 | `PROXY_EXPECTED_RESPONSE` | The expected response from the proxy, to start handling it. | `403`   |
@@ -48,8 +48,7 @@ read out defined values from the returned HTML body of your proxy interceptor se
 {
   "html_parsing": {
     "depth": 2,
-    "tag": "h1",
-    "contains": "STARTING . . ."
+    "tag": "h1"
   }
 }
 ```
@@ -58,17 +57,17 @@ read out defined values from the returned HTML body of your proxy interceptor se
 
 - `depth`: The depth of the HTML tree to search for the tag.
 - `tag`: The tag to search for.
-- `contains`: The text that the tag should contain, is optional.
 
 #### Example
 
 ```html
 <html>
   <body>
-    <h1>STARTING . . .</h1>
+    <h1>My Value</h1>
   </body>
 </html>
 ```
 
-> **Note:** The above example would be found by the proxy handler and saved in the report, because the `h1` tag contains
-> the text `STARTING . . .`.
+> **Note:** The above example is a very simple HTML structure, but it is just to show you how the depth and tag work.
+
+
