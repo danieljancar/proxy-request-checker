@@ -40,7 +40,7 @@ To run the proxy checker on the fly, run the following command:
 
 ```bash
 /projects/proxy-request-checker >
-go run cmd/main.go
+$ go run cmd/main.go
 ```
 
 ### Binary
@@ -49,9 +49,9 @@ To run the proxy checker as a binary, run the following commands:
 
 ```bash
 /projects/proxy-request-checker >
-go build -o bin/proxy-checker cmd/main.go
+$ go build -o bin/proxy-checker cmd/main.go
 /projects/proxy-request-checker >
-bin/proxy-checker
+$ bin/proxy-checker
 ```
 
 > **Note:** Run the binary on the project root directory to avoid any issues with the config files, that might not be
